@@ -17,6 +17,7 @@ void ATankAIController::Tick(float DeltaTime)
 
 	if (PlayerTank)
 	{
+		MoveToActor(PlayerTank, AcceptanceRadius); // TODO check radius is in cm
 		// TODO Move towards the player
 
 		// Aim towards the player
