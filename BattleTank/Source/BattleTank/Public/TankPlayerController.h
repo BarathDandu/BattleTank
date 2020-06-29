@@ -42,4 +42,8 @@ public:
 
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
 
+	UFUNCTION()
+	void OnPossedTankDeath();
+	
+	void SetPawn(APawn * InPawn); 
 };
