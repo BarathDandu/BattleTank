@@ -17,12 +17,7 @@ class BATTLETANK_API UTankTrack : public UStaticMeshComponent
 public:
 	UTankTrack();
 
-	virtual void BeginPlay() override;
-
 	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
-
-	UFUNCTION()
-	void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
 
 	// Sets a throttle between -1 and +1
 	UFUNCTION(BlueprintCallable, Category = Input)
@@ -31,9 +26,7 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	float TrackMaxDrivingForce = 40000000;
 
-	void DriveTrack();
+	void DriveTrack(float CurrentThrottle);
 
-	float CurrentThrottle = 0;
-
-	void ApplySidewaysForce();
+	TArray<class ASprungWheel*> GetWheels() const;
 };
