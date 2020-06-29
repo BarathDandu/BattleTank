@@ -19,6 +19,7 @@ public:
 
 	virtual void BeginPlay() override;
 	
+	UFUNCTION(BlueprintCallable, Category = "Setup")
 	ATank* GetControlledTank() const;
 
 	virtual void Tick(float DeltaTime) override;
